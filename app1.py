@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 # Hardcoded OpenRouter API key (replace with your actual key)
-OPENROUTER_API_KEY = "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"
+OPENROUTER_API_KEY = "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"
 
 # Configure OpenAI client to use OpenRouter
 openai.api_key = OPENROUTER_API_KEY
@@ -29,7 +29,7 @@ Include:
 Keep it concise but professional.
 """
         response = openai.ChatCompletion.create(
-            model="gpt-4o",  # or another model available via OpenRouter
+            model="gpt-3.5-turbo",  # or another model available via OpenRouter
             messages=[{"role": "user", "content": prompt}],
             max_tokens=500,
             temperature=0.7
