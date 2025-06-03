@@ -3,12 +3,15 @@ import openai
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import os
 
 # Hardcoded OpenRouter API key (replace with your actual key)
-OPENROUTER_API_KEY = "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"
+# OPENROUTER_API_KEY = "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"
 
 # Configure OpenAI client to use OpenRouter
-openai.api_key = OPENROUTER_API_KEY
+
+api_key = os.getenv("OPENROUTER_API_KEY")
+
 openai.api_base = "https://openrouter.ai/api/v1"
 
 def generate_professional_email(work_update, user_name, lead_name):
